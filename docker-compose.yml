@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  # 1. 后端服务 (API)
+  backend:
+    build: .
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./market_data.db:/app/market_data.db  # 挂载数据库文件，防止数据丢失
+    networks:
+      - nvda-network
+
+  # 2. 前端服务 (Dashboard)
+  frontend:
+    build: .
+    command: streamlit run dashboard.py --server.port 8501 --server.address 0.0.0.0
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://backend:8000  # 前端通过这个地址找到后端
+    depends_on:
+      - backend
+    networks:
+      - nvda-network
+
+  # 3. 调度器服务 (Scheduler)
+  scheduler:
+    build: .
+    command: python scheduler.py
+    volumes:
+      - ./market_data.db:/app/market_data.db
+    depends_on:
+      - backend
+    networks:
+      - nvda-network
+
+networks:
+  nvda-network:
+    driver: bridge
