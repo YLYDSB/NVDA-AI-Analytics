@@ -4,7 +4,7 @@ An application designed to track, persist, and analyze NVIDIA (NVDA) market data
 
 ---
 
-## 🌟 Highlights
+## Highlights
 
 - **Automated Data Pipeline**: Integrated with Alpha Vantage API to fetch real-time market quotes via a custom Python scheduler.
 - **Relational Data Persistence**: Utilizes **SQLite** for structured storage of historical price data, enabling time-series analysis.
@@ -16,7 +16,7 @@ An application designed to track, persist, and analyze NVIDIA (NVDA) market data
 
 ---
 
-## 🏗 System Architecture
+## System Architecture
 
 The project follows a modular architecture to ensure scalability and maintainability:
 
@@ -28,7 +28,7 @@ The project follows a modular architecture to ensure scalability and maintainabi
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Language**: Python 3.11
 - **Backend Framework**: FastAPI, Uvicorn
@@ -39,14 +39,8 @@ The project follows a modular architecture to ensure scalability and maintainabi
 
 ---
 
-## 🚀 Quick Start
 
 ### Prerequisites
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running.
 - [Ollama](https://ollama.com/) installed (ensure `ollama pull llama3` has been executed).
 
-### Installation & Deployment
-1. **Clone the Repository**:
-   ```powershell
-   git clone [https://github.com/YOUR_USERNAME/NVDA-AI-Analytics.git](https://github.com/YOUR_USERNAME/NVDA-AI-Analytics.git)
-   cd NVDA-AI-Analytics
