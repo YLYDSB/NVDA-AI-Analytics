@@ -44,3 +44,21 @@ The project follows a modular architecture to ensure scalability and maintainabi
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running.
 - [Ollama](https://ollama.com/) installed (ensure `ollama pull llama3` has been executed).
 
+
+### Installation & Deployment
+1. **Clone the Repository**:
+   ```powershell
+   git clone [https://github.com/YLYDSB/NVDA-AI-Analytics.git](https://github.com/YLYDSB/NVDA-AI-Analytics.git)
+   cd NVDA-AI-Analytics
+Configure API Key:
+Obtain a free API key from Alpha Vantage and replace the API_KEY placeholder in ingest.py.
+
+Launch with Docker:
+
+PowerShell
+docker-compose up --build
+Access the Platform:
+
+Interactive Dashboard: http://localhost:8501
+
+API Documentation: http://localhost:8000/docs
